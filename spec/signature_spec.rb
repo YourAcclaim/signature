@@ -67,6 +67,14 @@ describe Signature do
       @request.send(:string_to_sign).should == "POST\n/some/path\nthings[]=thing1&things[]=thing2"
     end
 
+    it "should generate correct string when query hash contains nested elements" do
+      @request.query_hash = {
+        "things" => [{ "thing_1" => "value1" }, { "thing_2" => "value2" }]
+      }
+      @request.send(:string_to_sign).should ==
+        "POST\n/some/path\nthings[][thing_1]=value1&things[][thing_2]=value2"
+    end
+
     # This may well change in auth version 2
     it "should not escape keys or values in the query string" do
       @request.query_hash = {

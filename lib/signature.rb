@@ -180,15 +180,11 @@ module Signature
       def parameter_string
         param_hash = @query_hash.merge(@auth_hash || {})
 
-        # Convert keys to lowercase strings
-        hash = {}; param_hash.each { |k,v| hash[k.to_s.downcase] = v }
-
         # Exclude signature from signature generation!
-        hash.delete("auth_signature")
+        param_hash.delete(:auth_signature)
+        param_hash.delete("auth_signature")
 
-        hash.sort.map do |k, v|
-          QueryEncoder.encode_param_without_escaping(k, v)
-        end.join('&')
+        QueryEncoder.encode_params_without_escaping(param_hash)
       end
 
       def validate_version!
