@@ -12,6 +12,9 @@ Gem::Specification.new do |s|
   s.summary     = %q{Simple key/secret based authentication for apis}
   s.description = %q{Simple key/secret based authentication for apis}
 
+
+  s.metadata['allowed_push_host'] = "https://rubygems.pkg.github.com/YourAcclaim"
+
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
