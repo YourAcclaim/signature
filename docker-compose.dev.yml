@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  signature:
+    stdin_open: true
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/app
+    command: "bash -c 'while true; do sleep 2; done'"
+    logging: &default-logging-options
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "5"
