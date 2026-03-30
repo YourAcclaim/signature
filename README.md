@@ -59,6 +59,18 @@ Developing
 
 Please see the travis status for a list of rubies tested against
 
+Docker Development
+------------------
+
+Build and start the container:
+
+    docker compose -f docker-compose.dev.yml up --build -d
+
+Run tests:
+
+    docker compose -f docker-compose.dev.yml exec signature bundle exec rspec
+
+
 Copyright
 ---------
 

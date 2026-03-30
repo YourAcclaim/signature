@@ -30,7 +30,7 @@ module Signature
       end
 
       def entry(key, value)
-        query_key = key.inject('') do |memo, part|
+        query_key = key.inject(String.new) do |memo, part|
           if part.nil?
             memo << "[]"
           else

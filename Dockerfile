@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/ruby:3.2.3-alpine3.19
+FROM public.ecr.aws/docker/library/ruby:3.4.8-alpine
 
 RUN apk add --no-cache --update git build-base bash
 
