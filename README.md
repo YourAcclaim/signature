@@ -1,8 +1,6 @@
 signature
 =========
 
-[![Build Status](https://secure.travis-ci.org/mloughran/signature.png?branch=master)](http://travis-ci.org/mloughran/signature)
-
 Examples
 --------
 
@@ -56,8 +54,6 @@ Developing
 
     bundle
     bundle exec rspec spec/*_spec.rb
-
-Please see the travis status for a list of rubies tested against
 
 Docker Development
 ------------------
